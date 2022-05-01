@@ -10,6 +10,7 @@ const Home = () => {
     'uid',
     '==',
     user.uid,
+    ['createdAt', 'desc'],
   ])
 
   return (

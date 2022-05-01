@@ -4,6 +4,7 @@
   --main-clr: #7bae37;
   --main-text-clr: #f2f1f1;
   --main-text-black-clr: #010101;
+  --error-clr: #d62434;
 }
 /* base styles */
 body {

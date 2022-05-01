@@ -8,7 +8,9 @@ const TransactionList = ({ transactions }) => {
     return (
       <>
         <h4 style={{ marginBottom: '1rem' }}>Transcation List</h4>
-        <h4>Add transactions to appear in this List.</h4>
+        <h4 style={{ color: 'var(--error-clr)' }}>
+          Add transactions to appear in this List.
+        </h4>
       </>
     )
   } else {

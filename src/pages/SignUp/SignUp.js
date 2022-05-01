@@ -47,7 +47,9 @@ const SignUp = () => {
           Loading...
         </button>
       )}
-      {error && <p>{error}</p>}
+      {error && (
+        <p style={{ color: 'var(--error-clr)', margin: '1rem 0' }}>{error}</p>
+      )}
     </form>
   )
 }

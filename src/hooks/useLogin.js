@@ -13,7 +13,7 @@ export const useLogin = () => {
 
     try {
       const res = await projectAuth.signInWithEmailAndPassword(email, password)
-      console.log(res)
+
       dispatch({ type: 'LOGIN', payload: res.user })
 
       //update state

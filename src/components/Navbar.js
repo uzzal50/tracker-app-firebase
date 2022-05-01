@@ -29,7 +29,7 @@ const Navbar = () => {
         {user && (
           <>
             <li>
-              Hello,{' '}
+              Hi,{' '}
               {user.displayName.charAt(0).toUpperCase() +
                 user.displayName.slice(1)}
             </li>

@@ -52,9 +52,7 @@ export const useFirestore = (collection) => {
 
   //only dipatch if not cancelled
   const dispatchIfNotCancelled = (action) => {
-    console.log('hello')
     if (!!isCancelled) {
-      console.log('again')
       dispatch(action)
     }
   }
@@ -66,7 +64,6 @@ export const useFirestore = (collection) => {
     try {
       const createdAt = timestamp.fromDate(new Date())
       const addedDocument = await ref.add({ ...doc, createdAt })
-      console.log(addedDocument)
 
       dispatchIfNotCancelled({
         type: 'ADDED_DOCUMENT',
