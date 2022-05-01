@@ -66,4 +66,7 @@ h3 {
 }
 .listsul li {
   color: var(--main-text-black-clr);
+  display: flex;
+  gap: 1rem;
+  align-items: center;
 }

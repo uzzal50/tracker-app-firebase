@@ -1,8 +1,9 @@
 import React from 'react'
 import styles from './Home.module.css'
+import { useFirestore } from '../../hooks/useFirestore'
 
 const TransactionList = ({ transactions }) => {
-  console.log(transactions)
+  const { deleteDocument } = useFirestore('transactions')
   if (transactions.length === 0) {
     return (
       <>
@@ -17,9 +18,26 @@ const TransactionList = ({ transactions }) => {
         <ul className={styles.listsul}>
           {transactions.map((doc) => {
             return (
-              <li key={doc.id}>
-                <p>{doc.name.charAt(0).toUpperCase() + doc.name.slice(1)}</p>
-                <p>Rs {doc.amount}</p>
+              <li
+                key={doc.id}
+                className={{
+                  display: 'flex',
+                  gap: '1rem',
+                  alignItems: 'center',
+                }}
+              >
+                <div>
+                  <p>{doc.name.charAt(0).toUpperCase() + doc.name.slice(1)}</p>
+                  <p>Rs {doc.amount}</p>
+                </div>
+
+                <button
+                  className='btn'
+                  style={{ marginLeft: 'auto' }}
+                  onClick={() => deleteDocument(doc.id)}
+                >
+                  Delete
+                </button>
               </li>
             )
           })}
